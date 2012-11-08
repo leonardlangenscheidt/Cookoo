@@ -2,19 +2,19 @@
 <html>
 	<head>
 		<title>Cookoo</title>
-		<link rel="stylesheet" type="text/CSS" href="/css/styles.css" />
-		<link rel="stylesheet" type"text/CSS" href="/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/~leonardlangenscheidt/cookoo/css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="/~leonardlangenscheidt/css/cookoo/normalize.css" />
 	</head>
 	<body>
 		<header>
-			<h1>Cookoo</h1>
+			<img id="logo" src="http://s6.postimage.org/evbzcogr5/Screen_Shot_2012_11_02_at_10_27_48_AM.png" />
 			<nav>
-				<ul>
+				<ul id="navbar">
 					<li>
 						<a href="#">Home</a>
 					</li>
 					<li>
-						<a href="#">Recipes</a>
+						<a href="#">Add a Recipe</a>
 					</li>
 					<li>
 						<a href="#">Contact</a>
@@ -23,32 +23,65 @@
 			</nav>
 		</header>
 		<section>
-			<nav>
-				<ul>
-					<li>Mini Pizzas</li>
-					<li>Wiener Schnitzel</li>
-					<li>Apple Crisp</li>
-				</ul>
-			</nav>
-			<div class="profile">
-				<h3> Name: </h3>
-				<ul>
-					<li>
-						<span class="utensil">Pot:</span>
-						<span class="timeline">30-20</span>
-					</li>
-					<li>
-						<span class="utensil">Pan:</span>
-						<span class="timeline">20-12</span>
-					</li>
-					<li>
-						<span class="utensil">Oven:</span>
-						<span class="timeline">15-0</span>
-					</li>
-					<li>
-						<span class="utensil">You:</span>
-						<span class="timeline">35-0</span>
-					</li>
+			<div id="left_column">
+				<h3>Making Cooking Easier</h3>
+				<p>Cooking is about timing, and conventional recipes make it difficult to keep all time-sensitive matters in mind. Cookoo solves this problem by creating an ordered and simple timeline that shows you when to start, when to prepare what and reminds you to preheat the oven in time. Try it out and see how easy timing can be. </p>
+				<h3>Select Recipe:</h3>
+				<select>
+				 	<option value="SimpleSalad">Simple Salad</option>
+				 	<option value="CrabCakes">Crab Cake</option>
+				 	<option value="VitelloDonato">Vitello Donato</option>
+				 	<option value="Lasagne">Lasagne</option>
+				 	<option value="HerbChicken">Herb Chicken</option>
+				 	<option value="BeefStew">Beef Stew</option>
+				 	<option value="HerbChicken">Herb Chicken</option>
+				 	<option value="YogurtParfait">Yogurt Parfait</option>
+				 	<option value="ChocolateCake">Chocolate Cake</option>
+				</select>
+				<h3>Tonight I'm cooking for:</h3>
+				<select>
+					<option value="1">Myself</option>
+					<option value="2">A group of 2</option>
+					<option value="3">A group of 3</option>
+					<option value="4">A group of 4</option>
+				</select>
+			</div>
+			<div id="right_column">
+				<h2>
+					Name:<span id="name"></span>
+				</h2>
+				<div class="ingredients">
+					<h3>Ingredients:</h3>
+					<ul>
+						<li>Ingredient 1</li>
+						<li>Ingredient 2</li>
+						<li>Ingredient 3</li>
+						<li>Ingredient 4</li>
+						<li>Ingredient 5</li>
+						<li>Ingredient 6</li>
+						<li>Ingredient 7</li>
+					</ul>
+				</div>
+				<div class="profile">
+					<h3>Utensils: </h3>
+					<ul>
+						<li>
+							<span class="utensil">Pot:</span>
+							<span class="timeline">30-20</span>
+						</li>
+						<li>
+							<span class="utensil">Pan:</span>
+							<span class="timeline">20-12</span>
+						</li>
+						<li>
+							<span class="utensil">Oven:</span>
+							<span class="timeline">15-0</span>
+						</li>
+						<li>
+							<span class="utensil">You:</span>
+							<span class="timeline">35-0</span>
+						</li>
+				</div>
 			</div>
 		</section>
 		<footer>
