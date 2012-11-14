@@ -3,7 +3,8 @@
 	<head>
 		<title>Cookoo</title>
 		<link rel="stylesheet" type="text/css" href="/~leonardlangenscheidt/cookoo/css/styles.css" />
-		<link rel="stylesheet" type="text/css" href="/~leonardlangenscheidt/css/cookoo/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/~leonardlangenscheidt/cookoo/css/normalize.css" />
+		<script type="text/javascript" src="/~leonardlangenscheidt/cookoo/recipes.js"></script>
 	</head>
 	<body>
 		<header>
@@ -28,6 +29,7 @@
 				<p>Cooking is about timing, and conventional recipes make it difficult to keep all time-sensitive matters in mind. Cookoo solves this problem by creating an ordered and simple timeline that shows you when to start, when to prepare what and reminds you to preheat the oven in time. Try it out and see how easy timing can be. </p>
 				<h3>Select Recipe:</h3>
 				<select>
+					<option value="Popcorn">Popcorn</option>
 				 	<option value="SimpleSalad">Simple Salad</option>
 				 	<option value="CrabCakes">Crab Cake</option>
 				 	<option value="VitelloDonato">Vitello Donato</option>
@@ -38,6 +40,7 @@
 				 	<option value="YogurtParfait">Yogurt Parfait</option>
 				 	<option value="ChocolateCake">Chocolate Cake</option>
 				</select>
+				<button onclick="fillIngredients()">Let's do it!</button>
 				<h3>Tonight I'm cooking for:</h3>
 				<select>
 					<option value="1">Myself</option>
@@ -50,7 +53,7 @@
 				<h2>
 					Name:<span id="name"></span>
 				</h2>
-				<div class="ingredients">
+				<div id="ingredients">
 					<h3>Ingredients:</h3>
 					<ul>
 						<li>Ingredient 1</li>
@@ -62,8 +65,8 @@
 						<li>Ingredient 7</li>
 					</ul>
 				</div>
-				<div class="profile">
-					<h3>Utensils: </h3>
+				<div id="profile">
+					<h3>Kitchenware: </h3>
 					<ul>
 						<li>
 							<span class="utensil">Pot:</span>
