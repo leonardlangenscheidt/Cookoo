@@ -1,9 +1,18 @@
 
+
+var capitalize = function(word) {
+	var firstLetter = word.substring(0,1).toUpperCase();
+	var rest = word.substring(1,word.length).toLowerCase();
+	var capitalized = firstLetter + rest;
+	return capitalized;}
+
+
+
 var Recipe = function(name) {
 	
 // NAME
 
-	this.name = name;
+	this.name = capitalize(name);
 	this.getName = function() {
 		return this.name;};
 	
@@ -12,15 +21,13 @@ var Recipe = function(name) {
 	this.ingredients = [];
 	
 	this.addIngredient = function(ing) {
-		this.ingredients.push(ing);};
-		
+		this.ingredients.push(capitalize(ing));};
+
 	this.getIngredients = function() {
-		var string = "For " + name + " we need " + this.ingredients[0];
+		var string = '<h3>Ingredients:</h3><ul><li>' + this.ingredients[0] + '</li>';
 		for (i=1; i<this.ingredients.length; i++) {
-			if (i===this.ingredients.length-1) {
-			string += " and " + this.ingredients[i] + ".";
-			} else {
-			string += ", " + this.ingredients[i];}}
+			string += "<li>" + this.ingredients[i] + "</li>";}
+		string += "</ul>";
 		return string;};
 	
 //INSTRUCTIONS
@@ -47,15 +54,14 @@ var Recipe = function(name) {
 			this.steps[i]= new Step(this.instructions[i], this.durations[i], this.steps[(i-1)].endtime);}
 	};
 	
-	this.getToDo = function() {
-		var string = "First, about "+this.steps[0].starttime+" minutes before serving, "+this.steps[0].instruction+".";
+	this.getSteps = function() {
+		var string = '<h3>Steps:</h3><ul><li>' + this.steps[0].starttime + " minutes before serving, "+this.steps[0].instruction+'.</li>';
 		for(i=1; i<this.steps.length; i++) {
-			string += " Then, about "+this.steps[i].starttime+" minutes before serving, "+this.steps[i].instruction+".";}
+			string += '<li>' + this.steps[i].starttime + " minutes before serving, " + this.steps[i].instruction + '.</li>';}
 		return string;};
 };
 
 var addpopcorn = function() {	
-	var popcorn = new Recipe("Popcorn");
 	popcorn.addIngredient("corn");
 	popcorn.addIngredient("salt");
 	popcorn.addIngredient("butter");
@@ -65,7 +71,19 @@ var addpopcorn = function() {
 	popcorn.addStep("cover it in butter", 2);
 	popcorn.makeTimeline();	};
 
+var popcorn = new Recipe("poPcorn");
+addpopcorn();
+
+function fillName() {
+	document.getElementById("name").innerHTML = popcorn.getName();}
+
 function fillIngredients() {
-	addpopcorn();
-	document.getElementById("ingredients").innerHTML = "hello " + popcorn.getIngredients;
-}
+	document.getElementById("ingredients").innerHTML = popcorn.getIngredients();}
+
+function fillSteps() {
+	document.getElementById("steps").innerHTML = popcorn.getSteps();}
+
+function fillAll() {
+	fillName();
+	fillIngredients();
+	fillSteps();}
